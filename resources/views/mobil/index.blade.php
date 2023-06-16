@@ -8,6 +8,7 @@
 </head>
 <body>
     <div class="card">
+        <h1>Data Mobil</h1>
         <table>
             <thead>
                 <tr>
@@ -19,12 +20,13 @@
             </thead>
             <tbody>
                 @foreach ($dataMobil as $mobil)
-                    <tr>
-                        <td> {{$loop->iteration}}</td>
-                        <td> {{$mobil ['namaMobil']}}</td>
-                        <td> {{$mobil ['merkMobil']}}</td> 
-                        <td> {{$mobil ['cc']}}</td>
-                    </tr>
+                <tr>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{$mobil['namaMobil'] }}</td>
+                    <td>{{$mobil['merkMobil'] }}</td>
+                    <td>{{$mobil['cc'] }}</td>
+                </tr>
+                    
                 @endforeach
             </tbody>
         </table>

@@ -1,5 +1,6 @@
 <?php
-namespace App\http\Controllers;
+namespace App\Http\Controllers;
+use App\Http\Controllers\MobilController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,16 +18,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/welcome', function(){
-    echo "Selamat Datang Di Laravel";
+Route::get('/welcome',function(){
+    echo "Selamat Datang di Laravel";
 });
 
-Route::get('/greeting', function(){
+Route::get('greeting', function(){
     return view('greeting');
 });
 
-Route::get('/mobil', [MobilController::class, 'index']);
+Route::get('/mobil',[MobilController::class, 'index']);
 Route::get('/mobil/create', [MobilController::class, 'create']);
-Route::post('/mobil/simpanData', [MobilController::class, 'store']);
+Route::post('/mobil/simpan-data', [MobilController::class, 'store']);
 
-route::get('/merk', [MerkController::class, 'index']);
+Route::get('/merk', [MerkController::class, 'index']);
+Route::get('/merk/create',[MerkController::class,'create']);
+Route::post('/merk/simpan-data',[MerkController::class,'store']);
+
+Route::get('/merk/edit/{id}', [MerkController::class, 'edit']);
+Route::post('/merk/update/{id}', [MerkController::class, 'update']);
+Route::get('/merk/delete/{id}', [MerkController::class, 'delete']);
